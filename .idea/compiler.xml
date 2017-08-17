@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="enexus_main" target="1.8" />
       <module name="enexus_test" target="1.8" />
+      <module name="kotlin-enexus_main" target="1.8" />
+      <module name="kotlin-enexus_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

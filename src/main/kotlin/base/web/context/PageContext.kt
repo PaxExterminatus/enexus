@@ -1,23 +1,33 @@
 package base.web.context
 
 open class PageContext {
-    var charset: String = "utf-8"
-    var mimeSupertype: String = "text"
-    var mimeSubtype: String = "html"
-    var languages: Array<String> = arrayOf("ru","en")
+    var charset = "utf-8"
+    var mimeSupertype = "text"
+    var mimeSubtype = "html"
+    var languages = arrayOf("ru","en")
 
-    var title: String = ""
-    var body: String = ""
-    var head: String = ""
-    var html: String = ""
+    var title = ""
+    var body  = ""
+    var head  = ""
 
-    open val context: String get() = buildContext()
+    var layoutUse = true
+    var layoutName = "default"
+
+    var context = ""
+        get() = buildContext()
 
     private fun buildContext(): String {
-        title = "<title>$title</title>"
-        head = "<head>$title</head>"
-        body  = "<body>$body</body>"
-        html = "<!doctype html>$head $body</html>"
-        return html
+        val layout: LayoutContext? = if (layoutUse) LayoutContext(layoutName) else null
+
+        var _bodyTop = layout?.bodyTop ?: ""
+        var _bodyBottom = layout?.bodyBottom ?: ""
+        var _headBottom = layout?.headBottom ?: ""
+
+        var _title = "<title>$title</title>"
+        var _head =  "<head>$_title$head$_headBottom</head>"
+        var _body =  "<body>$_bodyTop$body$_bodyBottom</body>"
+        var _html =  "<!doctype html>$_head$_body</html>"
+        return _html
     }
+
 }

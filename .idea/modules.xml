@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus_main.iml" group="enexus" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus_test.iml" group="enexus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-enexus.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-enexus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-enexus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-enexus_main.iml" group="enexus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-enexus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-enexus_test.iml" group="enexus" />
     </modules>
   </component>
 </project>

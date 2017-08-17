@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" external-system-id="GRADLE" name="Gradle : by.paxdevsystem : enexus.war (exploded)">
+  <artifact type="exploded-war" name="Gradle : by.paxdevsystem : enexus.war (exploded)">
     <output-path>$PROJECT_DIR$/build/libs/exploded/enexus.war</output-path>
     <properties id="gradle-properties">
       <options external-project-path="$PROJECT_DIR$">
@@ -10,18 +10,18 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/enexus.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="enexus_main/web/Web Gradle : enexus.war" />
+      <element id="javaee-facet-resources" facet="kotlin-enexus_main/web/Web Gradle : enexus.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="enexus_main" />
+          <element id="module-output" name="kotlin-enexus_main" />
           <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.4" />
-          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
-          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4" />
-          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.4" />
-          <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.1.4/fd345d98e1a2ae9581de1320da63dd907658fbd5/kotlin-stdlib-jre8-1.1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.4/9cd7515c511a546ec30c0118edc19a9534847378/kotlin-stdlib-jre7-1.1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.4/1fb1d39f1081d1f60dd739e55c366839b935c9ec/kotlin-stdlib-1.1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
         </element>
       </element>
     </root>
