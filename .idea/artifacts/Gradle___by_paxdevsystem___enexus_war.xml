@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" external-system-id="GRADLE" name="Gradle : by.paxdevsystem : enexus.war">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="enexus.war">
+      <element id="artifact" artifact-name="Gradle : by.paxdevsystem : enexus.war (exploded)" />
+    </root>
+  </artifact>
+</component>

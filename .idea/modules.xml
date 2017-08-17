@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus_main.iml" group="enexus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/enexus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/enexus_test.iml" group="enexus" />
+    </modules>
+  </component>
+</project>
