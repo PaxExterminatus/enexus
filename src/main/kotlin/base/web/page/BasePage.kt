@@ -7,9 +7,23 @@ import javax.servlet.http.HttpServletResponse
 
 open class BasePage: HttpServlet() {
     protected var pageContext: PageContext = PageContext()
+    protected var action: String = ""
 
     override fun doGet(req: HttpServletRequest?, res: HttpServletResponse?) {
-        res?.writer?.println(pageContext.context);
+        /*Обработка Запроса*/
+        requestProcessing(req)
+        pageContext.body.add("<h1>$action</h1>")
+
+        /*Создание Ответа*/
+        res?.writer?.println(pageContext.content);
+        pageContext.clear()
     }
 
+    private fun requestProcessing(req: HttpServletRequest?) {
+        action = buildAction(req?.requestURL.toString())
+    }
+
+    private fun buildAction(url: String): String {
+        return Regex("\\w+\$").find(url)?.value ?: ""
+    }
 }
