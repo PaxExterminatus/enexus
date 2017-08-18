@@ -12,18 +12,18 @@ open class BasePage: HttpServlet() {
     override fun doGet(req: HttpServletRequest?, res: HttpServletResponse?) {
         /*Обработка Запроса*/
         requestProcessing(req)
-        pageContext.body.add("<h1>$action</h1>")
-
         /*Создание Ответа*/
         res?.writer?.println(pageContext.content);
         pageContext.clear()
     }
 
-    private fun requestProcessing(req: HttpServletRequest?) {
-        action = buildAction(req?.requestURL.toString())
+    protected fun requestProcessing(req: HttpServletRequest?) {
+        action = actionNameGet(req?.requestURL.toString()).plus("Action")
     }
 
-    private fun buildAction(url: String): String {
+    private fun actionNameGet(url: String): String {
         return Regex("\\w+\$").find(url)?.value ?: ""
     }
+
+
 }

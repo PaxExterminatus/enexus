@@ -34,7 +34,7 @@ open class PageContext {
     class Context{
         var value: String = ""
         fun add(str: String){
-            value = value.plus(str)
+            value = value.plus(str).plus("<br>")
         }
     }
 
