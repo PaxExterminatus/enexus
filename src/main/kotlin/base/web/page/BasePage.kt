@@ -9,16 +9,19 @@ open class BasePage: HttpServlet() {
     protected var pageContext: PageContext = PageContext()
     protected var action: String = ""
 
-    override fun doGet(req: HttpServletRequest?, res: HttpServletResponse?) {
-        /*Обработка Запроса*/
+    override fun service(req: HttpServletRequest, res: HttpServletResponse) {
         requestProcessing(req)
-        /*Создание Ответа*/
-        res?.writer?.println(pageContext.content);
+        res.contentType = pageContext.contentType
+        res.writer.println(pageContext.content);
         pageContext.clear()
     }
 
-    protected fun requestProcessing(req: HttpServletRequest?) {
-        action = actionNameGet(req?.requestURL.toString()).plus("Action")
+    protected fun requestProcessing(req: HttpServletRequest) {
+        action = actionNameGet(req.requestURL.toString()).plus("Action")
+    }
+
+    protected fun responseProcessing(res: HttpServletResponse) {
+
     }
 
     private fun actionNameGet(url: String): String {

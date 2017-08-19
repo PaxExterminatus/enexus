@@ -4,6 +4,7 @@ open class PageContext {
     var charset = "utf-8"
     var mimeSupertype = "text"
     var mimeSubtype = "html"
+    val contentType = "$mimeSupertype/$mimeSubtype;charset=$charset"
     var languages = arrayOf("ru","en")
 
     var title = ""
