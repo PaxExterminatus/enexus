@@ -1,4 +1,4 @@
-package base.web.page
+package base.web.servlet
 
 import base.web.context.PageContext
 import javax.servlet.http.HttpServlet
@@ -6,26 +6,27 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 open class BasePage: HttpServlet() {
+    protected var unitName: String = ""
     protected var pageContext: PageContext = PageContext()
     protected var action: String = ""
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
-        requestProcessing(req)
-        res.contentType = pageContext.contentType
         res.writer.println(pageContext.content);
         pageContext.clear()
     }
 
     protected fun requestProcessing(req: HttpServletRequest) {
-        action = actionNameGet(req.requestURL.toString()).plus("Action")
+        action = actionName(req.requestURL.toString())
     }
 
     protected fun responseProcessing(res: HttpServletResponse) {
-
+        res.contentType = pageContext.contentType
     }
 
-    private fun actionNameGet(url: String): String {
-        return Regex("\\w+\$").find(url)?.value ?: ""
+    private fun actionName(url: String): String {
+        val pattern = "(?:$unitName)/(\\w+)"
+        var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: "$unitName"
+        return "action${_action.substring(0,1).toUpperCase().plus(_action.substring(1))}"
     }
 
 
