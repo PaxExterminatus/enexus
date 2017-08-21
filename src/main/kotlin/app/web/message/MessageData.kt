@@ -1,13 +1,13 @@
 package app.web.message
 
-import app.db.DBConnector
-import java.awt.GraphicsConfigTemplate
+import app.db.SAS_ORACLE
+import base.source.DbConnector
 import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.Types.*
 
 class MessageData{
-    private val db: Connection = DBConnector().connection!!
+    private val db: Connection = DbConnector(SAS_ORACLE).createConnection()
 
     fun billCourse(): BillCourse {
         var data = BillCourse()
