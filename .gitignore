@@ -1,1 +1,4 @@
-src\main\kotlin\app\db\Revelation.kt
+.gradle/
+.idea/workspace.xml
+build/
+/src/main/kotlin/app/db/Revelation.kt
