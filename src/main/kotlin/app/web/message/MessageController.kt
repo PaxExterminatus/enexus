@@ -2,6 +2,7 @@ package app.web.message
 
 import base.web.context.PageContext
 
+
 var messagePageContext = PageContext()
 /*Собития*/
 fun actionMessage() {
@@ -29,14 +30,14 @@ fun controllerAction(action:String):PageContext{
     return messagePageContext
 }
 
-val unitName = "message"
-val unitRoutes = arrayOf(
-        "/$unitName",
-        "/$unitName/preview",
-        "/$unitName/send",
-        "/$unitName/task"
+val UNIT_NAME = "message"
+val UNIT_ROUTES = arrayOf(
+        "/$UNIT_NAME",
+        "/$UNIT_NAME/preview",
+        "/$UNIT_NAME/send",
+        "/$UNIT_NAME/task"
 )
-val MESSAGE = unitRoutes[0]
-val MESSAGE_PREVIEW = unitRoutes[1]
-val MESSAGE_SEND = unitRoutes[2]
-val MESSAGE_TASK = unitRoutes[3]
+val MESSAGE = UNIT_ROUTES[0]
+val MESSAGE_PREVIEW = UNIT_ROUTES[1]
+val MESSAGE_SEND = UNIT_ROUTES[2]
+val MESSAGE_TASK = UNIT_ROUTES[3]

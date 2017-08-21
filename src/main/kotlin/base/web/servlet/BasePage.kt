@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-open class BasePage: HttpServlet() {
-    protected var unitName: String = ""
+open class BasePage(unitName:String): HttpServlet() {
+    protected var unitName = unitName
     protected var pageContext: PageContext = PageContext()
     protected var action: String = ""
 

@@ -15,12 +15,11 @@ import javax.servlet.http.HttpServletResponse
             "/message/report/*"
     )
 )
-class MessagePage: BasePage() {
+class MessagePage: BasePage(UNIT_NAME) {
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
         requestProcessing(req)
         responseProcessing(res)
         pageContext = controllerAction(action)
-        unitName = app.web.message.unitName
         super.service(req, res)
     }
 }
