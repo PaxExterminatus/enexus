@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-open class BasePage(unitName:String): HttpServlet() {
-    protected var unitName = unitName
+open class BaseServlet(): HttpServlet() {
+    protected var unitName = ""
     protected var pageContext: PageContext = PageContext()
     protected var action: String = ""
 
@@ -26,7 +26,7 @@ open class BasePage(unitName:String): HttpServlet() {
     private fun actionName(url: String): String {
         val pattern = "(?:$unitName)/(\\w+)"
         var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: "$unitName"
-        return "action${_action.substring(0,1).toUpperCase().plus(_action.substring(1))}"
+        return "action${_action.capitalize()}"
     }
 
 
