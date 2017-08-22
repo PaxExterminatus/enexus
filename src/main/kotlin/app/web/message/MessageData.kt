@@ -1,13 +1,12 @@
 package app.web.message
 
-import app.db.SAS_ORACLE
-import base.source.DbConnector
+import app.db.DbSeed
 import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.Types.*
 
 class MessageData{
-    private val db: Connection = DbConnector(SAS_ORACLE).createConnection()
+    private val db: Connection = DbSeed.sas.getConnection()
 
     fun billCourse(): BillCourse {
         var data = BillCourse()
