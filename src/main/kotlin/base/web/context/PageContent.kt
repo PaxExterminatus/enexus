@@ -1,7 +1,9 @@
 package base.web.context
 
-open class PageContext {
-    var charset = "utf-8"
+import app.CONTENT_CHARSET
+
+open class PageContent {
+    var charset = CONTENT_CHARSET
     var mimeSupertype = "text"
     var mimeSubtype = "html"
     val contentType = "$mimeSupertype/$mimeSubtype;charset=$charset"
@@ -30,6 +32,10 @@ open class PageContext {
         var _body =  "<body>$_bodyTop${body.value}$_bodyBottom</body>"
         var _html =  "<!doctype html>$_head$_body</html>"
         return _html
+    }
+
+    fun add(str: String) {
+        body.add(str)
     }
 
     class Context{

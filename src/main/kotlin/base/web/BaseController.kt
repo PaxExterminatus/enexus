@@ -1,21 +1,21 @@
 package base.web
 
-import app.DIR_VIEW
-import base.web.context.PageContext
+import app.CONTENT_CHARSET
+import app.PATH_VIEW
+import base.web.context.PageContent
 import freemarker.template.Configuration
 import java.io.File
-import java.nio.file.Paths;
 
 open class BaseController {
-    var UNIT_NAME = ""
-    var UNIT_ROUTES = arrayOf("")
+    val UNIT_NAME: String
+    //var UNIT_ROUTES = arrayOf("")
 
-    protected var pageContext = PageContext()
-
-    private var viewConfig = Configuration(Configuration.VERSION_2_3_25);
-
+    protected var pageContent = PageContent()
+    protected var viewConfig = Configuration(Configuration.VERSION_2_3_25);
     init {
-        //UNIT_NAME = this.javaClass.simpleName
-        viewConfig.setDirectoryForTemplateLoading(File("$DIR_VIEW/$UNIT_NAME/"))
+        val controllerName: String = this.javaClass.simpleName.toLowerCase()
+        UNIT_NAME = Regex("(^.+)(?:controller)").matchEntire(controllerName)!!.groups.get(1)!!.value
+        viewConfig.setDirectoryForTemplateLoading(File("$PATH_VIEW/$UNIT_NAME/"))
+        viewConfig.defaultEncoding = CONTENT_CHARSET
     }
 }

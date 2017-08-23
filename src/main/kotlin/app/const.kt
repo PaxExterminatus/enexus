@@ -3,6 +3,6 @@ package app
 import java.nio.file.Paths
 
 val CONTENT_CHARSET = "utf-8"
-val DIR_SERVER = Paths.get(".").toAbsolutePath().normalize().toString()
-val DIR_APP = DIR_SERVER.plus("/webapps/enexus")
-val DIR_VIEW = DIR_APP.plus("/view")
+val PATH_SERVER = Paths.get(".").toAbsolutePath().normalize().toString()
+val PATH_APP = PATH_SERVER.plus("/webapps/enexus")
+val PATH_VIEW = PATH_APP.plus("/view")

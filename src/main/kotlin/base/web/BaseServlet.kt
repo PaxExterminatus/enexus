@@ -1,18 +1,18 @@
 package base.web
 
-import base.web.context.PageContext
+import base.web.context.PageContent
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 open class BaseServlet(): HttpServlet() {
     protected var unitName = ""
-    protected var pageContext: PageContext = PageContext()
+    protected var pageContent: PageContent = PageContent()
     protected var action: String = ""
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
-        res.writer.println(pageContext.content);
-        pageContext.clear()
+        res.writer.println(pageContent.content);
+        pageContent.clear()
     }
 
     protected fun requestProcessing(req: HttpServletRequest) {
@@ -20,7 +20,7 @@ open class BaseServlet(): HttpServlet() {
     }
 
     protected fun responseProcessing(res: HttpServletResponse) {
-        res.contentType = pageContext.contentType
+        res.contentType = pageContent.contentType
     }
 
     private fun actionName(url: String): String {

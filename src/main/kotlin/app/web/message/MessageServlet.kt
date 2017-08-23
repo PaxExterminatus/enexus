@@ -18,14 +18,14 @@ import javax.servlet.http.HttpServletResponse
 class MessageServlet : BaseServlet() {
     private var controller = MessageController()
     init {
-        pageContext.clear()
+        pageContent.clear()
         unitName = controller.UNIT_NAME
     }
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
         requestProcessing(req)
         responseProcessing(res)
-        pageContext = controller.controllerAction(action)
+        pageContent = controller.controllerAction(action)
         super.service(req, res)
     }
 }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse
 @WebServlet(name = "MainServlet", value = "")
 class MainServlet : BaseServlet() {
     override fun doGet(req: HttpServletRequest?, res: HttpServletResponse?) {
-        pageContext.title = "ESCC Nexus"
+        pageContent.title = "ESCC Nexus"
         super.doGet(req, res)
     }
 }
