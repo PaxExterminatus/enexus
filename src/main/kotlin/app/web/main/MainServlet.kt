@@ -1,6 +1,6 @@
 package app.web.main
 
-import base.web.servlet.BaseServlet
+import base.web.BaseServlet
 import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse

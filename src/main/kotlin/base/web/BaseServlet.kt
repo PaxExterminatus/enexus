@@ -1,4 +1,4 @@
-package base.web.servlet
+package base.web
 
 import base.web.context.PageContext
 import javax.servlet.http.HttpServlet

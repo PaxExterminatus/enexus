@@ -1,6 +1,6 @@
 package app.web.message
 
-import base.web.servlet.BaseServlet
+import base.web.BaseServlet
 import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse
     )
 )
 class MessageServlet : BaseServlet() {
-    private var controller: MessageController = MessageController()
+    private var controller = MessageController()
     init {
         pageContext.clear()
         unitName = controller.UNIT_NAME

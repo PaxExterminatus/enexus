@@ -2,10 +2,11 @@ package app.web.message
 
 import base.web.context.PageContext
 import freemarker.template.*
-import java.io.StringReader
+import java.io.File
 import java.io.StringWriter
+import java.nio.file.Paths
 
-class MessageController{
+class MessageController {
     private var pageContext = PageContext()
 
     val UNIT_NAME = "message"
@@ -20,24 +21,34 @@ class MessageController{
     val MESSAGE_SEND = UNIT_ROUTES[2]
     val MESSAGE_TASK = UNIT_ROUTES[3]
 
+    var vCfg: Configuration = Configuration(Configuration.VERSION_2_3_25);
+
+    init {
+        val dir = Paths.get(".").toAbsolutePath().normalize().toString()
+        vCfg.setDirectoryForTemplateLoading(File(dir.plus("/webapps/enexus/view/$UNIT_NAME/"))) //d:/devlib/tomcat8/webapps/enexus/view/message/
+        vCfg.defaultEncoding = "utf-8"
+    }
+
     private fun actionMessage() {
         pageContext.title = "Доступные темы сообщения"
         pageContext.body.add("<h1>Доступные темы сообщений</h1>")
     }
 
     private fun actionPreview() {
+        val vOut = StringWriter()
         pageContext.title = "Предпросмотр соощений"
         pageContext.body.add("<h1>Предпросмотр потока сообщений</h1>")
 
-        var model = MessageData()
-        var data = model.billCourse()
 
-        val template = Template("name", StringReader(data.template), Configuration(Configuration.VERSION_2_3_26))
-        val out = StringWriter()
-        template.process(data,out)
-        val str = out.toString()
+        val vData = mutableMapOf<String, String>()
+        vData["clientId"] = "2333"
+        vData["totalPrice"] = "22"
+        val tmp = vCfg.getTemplate("preview.ftlh")
+        tmp.process(vData,vOut)
+        pageContext.body.add(vOut.toString())
 
-        pageContext.body.add(str)
+        //var model = MessageData()
+        //var data = model.billCourse()
     }
 
     private fun elseAction(action: String) {
