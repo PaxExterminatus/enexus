@@ -21,14 +21,14 @@ class MessageController: BaseController() {
     fun controllerAction(action:String): PageContent {
         /*todo заменить рефликсией и вынести в Servlet*/
         when(action){
-            "actionMessage" -> actionMessage()
+            "actionMessage" -> this.javaClass.getMethod(action).invoke(this,null)
             "actionPreview" -> actionPreview()
             else -> elseAction(action)
         }
         return pageContent
     }
 
-    private fun actionMessage() {
+    fun actionMessage() {
         pageContent.title = "Доступные темы сообщения"
         pageContent.add("<h1>Доступные темы сообщений</h1>")
     }
