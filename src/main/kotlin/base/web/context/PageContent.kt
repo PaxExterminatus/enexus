@@ -44,10 +44,4 @@ open class PageContent {
             value = value.plus(str).plus("<br>")
         }
     }
-
-    fun clear() {
-        body.value = ""
-        head.value = ""
-    }
-
 }

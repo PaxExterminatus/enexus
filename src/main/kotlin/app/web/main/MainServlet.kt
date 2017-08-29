@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 @WebServlet(name = "MainServlet", value = "")
-class MainServlet : BaseServlet(BaseController()) {
-    override fun doGet(req: HttpServletRequest?, res: HttpServletResponse?) {
-        super.doGet(req, res)
+class MainServlet : BaseServlet(MainController()) {
+    override fun service(req: HttpServletRequest, res: HttpServletResponse) {
+        requestProcessing(req)
+        responseProcessing(res)
+        super.service(req, res)
     }
 }

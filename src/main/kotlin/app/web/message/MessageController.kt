@@ -1,8 +1,6 @@
 package app.web.message
 
 import base.web.BaseController
-import java.io.StringWriter
-
 
 
 class MessageController: BaseController() {
@@ -13,16 +11,14 @@ class MessageController: BaseController() {
     }
 
     fun actionPreview() {
-        val vOut = StringWriter()
         pageContent.title = "Предпросмотр соощений"
         pageContent.add("<h1>Предпросмотр потока сообщений</h1>")
 
-        val vData = mutableMapOf<String, Any>()
-        vData["clientId"] = 2333
-        vData["totalPrice"] = 22.0f
-        val tmp = viewConfig.getTemplate("preview.ftlh")
-        tmp.process(vData,vOut)
-        pageContent.add(vOut.toString())
+        val viewData: Any = object {
+            var clientId = 2335
+            var totalPrice = 35.0f
+        }
+        render("preview.ftlh", viewData)
 
         //var model = MessageData()
         //var data = model.billCourse()
