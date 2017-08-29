@@ -20,17 +20,23 @@ class MessageController: BaseController() {
 
     fun controllerAction(action:String): PageContent {
         /*todo заменить рефликсией и вынести в Servlet*/
-        when(action){
-            "actionMessage" -> this.javaClass.getMethod(action).invoke(this,null)
-            "actionPreview" -> actionPreview()
-            else -> elseAction(action)
-        }
+        var cl = this.javaClass
+        var mt = cl.getMethod(action)
+        mt.invoke(this)
+
+
+
+
+                //        when(action){
+//            "actionMessage" -> actionMessage()
+//            "actionPreview" -> actionPreview()
+//            else -> elseAction(action)
+//        }
         return pageContent
     }
 
     fun actionMessage() {
-        pageContent.title = "Доступные темы сообщения"
-        pageContent.add("<h1>Доступные темы сообщений</h1>")
+        pageContent.add("gogogog");
     }
 
     private fun actionPreview() {

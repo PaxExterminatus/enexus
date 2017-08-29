@@ -18,12 +18,13 @@
         </element>
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/lib/ojdbc14.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.1.4-2/168cc3f45c307edda6c867dd0635a7d451257551/kotlin-stdlib-jre8-1.1.4-2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.26-incubating/713237e013f725b72f4f9ec931a49c14b1805359/freemarker-2.3.26-incubating.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.4-2/272a21c30432c943d618008fbbd34762eb0d6c8a/kotlin-stdlib-jre7-1.1.4-2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.4-2/fec983b2608a8a91a1b87dba18d247d692cf6b51/kotlin-stdlib-1.1.4-2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.4-2" />
+          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: org.freemarker:freemarker:2.3.26-incubating" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4-2" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.4-2" />
+          <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.4/27053164a2b459671c4b9fe791408a5bc064937f/kotlin-reflect-1.1.4.jar" />
         </element>
       </element>
     </root>
