@@ -5,14 +5,12 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-open class BaseServlet(): HttpServlet() {
-    protected var unitName = ""
-    protected var pageContent: PageContent = PageContent()
+open class BaseServlet(controller: BaseController): HttpServlet() {
+    protected var controller: BaseController = controller
     protected var action: String = ""
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
-        res.writer.println(pageContent.content);
-        pageContent.clear()
+        res.writer.println(controller.unitRouter(action).content);
     }
 
     protected fun requestProcessing(req: HttpServletRequest) {
@@ -20,12 +18,12 @@ open class BaseServlet(): HttpServlet() {
     }
 
     protected fun responseProcessing(res: HttpServletResponse) {
-        res.contentType = pageContent.contentType
+        res.contentType = controller.pageContent.contentType
     }
 
     private fun actionName(url: String): String {
-        val pattern = "(?:$unitName)/(\\w+)"
-        var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: "$unitName"
+        val pattern = "(?:${controller.unitName})/(\\w+)"
+        var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: "${controller.unitName}"
         return "action${_action.capitalize()}"
     }
 
