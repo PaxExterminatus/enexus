@@ -2,7 +2,6 @@ package app.web.message
 
 import app.db.DbSeeds
 import oracle.jdbc.OracleTypes
-import java.sql.Connection
 import java.sql.ResultSet
 
 
