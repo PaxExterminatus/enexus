@@ -1,4 +1,4 @@
 .gradle/
 .idea/workspace.xml
 build/
-/src/main/kotlin/app/db/dbSeeds.kt
+/.idea/
