@@ -1,5 +1,7 @@
 package base.web.context
 
+import app.CONTENT_CHARSET
+
 class LayoutContext(layoutName: String = "default") {
     var headBottom: String = ""
     var bodyTop: String = ""
@@ -9,6 +11,7 @@ class LayoutContext(layoutName: String = "default") {
             "default" -> {
                 headBottom = headBottom
                 .plus("<link rel=\"stylesheet\" href=\"/enexus/source/design/style.css\">")
+                .plus("<meta charset=\"$CONTENT_CHARSET\">")
 
                 bodyTop    = ""
                 bodyBottom = ""

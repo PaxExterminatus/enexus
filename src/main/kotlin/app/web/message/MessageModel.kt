@@ -1,29 +1,27 @@
 package app.web.message
 
-import app.db.DbSeeds
-import oracle.jdbc.OracleTypes
-import java.sql.ResultSet
+import app.NDS
+import base.web.BaseModel
 
-
-
-class MessageModel {
+class MessageModel: BaseModel() {
 
     fun billCoursePreview(): Any {
-        var db = DbSeeds.sas.getConnection()
-        var call = db.prepareCall("{call MESSAGE_BUILD.PREVIEW(?,?,?)}")
-        var data = object {
-            var clientId: Int = 0
-            var totalPrice: Float = 0f
-        }
+        var rs = callSas("actionPreview","cause=bill_course&course=1081564&usr=323")
 
-        call.setString("FLOW_CAUSE", "bill_course")
-        call.setInt("CLIENT_ID", 2333)
-        call.registerOutParameter("DATA_CURSOR", OracleTypes.CURSOR)
-        call.executeUpdate()
-        var rs = call.getObject("DATA_CURSOR") as ResultSet
+        var data = object {
+            var itemId: Int = 0
+            var totalPrice: Float = 0f
+            var userName: String = ""
+            var nds = NDS
+            var count = 1
+            var name = ""
+            var billDate = java.util.Date()
+        }
         while (rs.next()) {
-            data.clientId = rs.getInt("CLIENT_ID")
+            data.itemId = rs.getInt("ITEM_ID")
             data.totalPrice = rs.getFloat("TOTAL_PRICE")
+            data.userName = rs.getString("USER_NAME")
+            data.name = rs.getString("PRODUCT_NAME")
         }
         return data
     }

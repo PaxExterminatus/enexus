@@ -13,42 +13,42 @@
         </tr>
     </table>
     <div colspan="2" style="text-align: center; width: 700px">
-        <strong>СЧЕТ № ${clientId} </strong><br>"______" _________________
+        <br>СЧЕТ № <strong>${itemId}</strong> от ${billDate?string('dd.MM.yyyy')}
     </div>
-    <p>Плательщик</p>
-    <p>Адрес</p>
-    <p>Основание</p>
+    <p>Плательщик </p>
+    <p>Адрес </p>
+    <p>Основание </p>
     <table border="1" width="700px" style="border-collapse: collapse;">
         <tr>
             <td>Предмет счета</td>
-            <td>Кол-во</td>
-            <td>Цена</td>
-            <td>Сумма</td>
-            <td>Ставка НДС</td>
-            <td>Сумма НДС</td>
-            <td>Всего с НДС</td>
+            <td>Кол-во, шт.</td>
+            <td>Цена, руб.</td>
+            <td>Сумма, руб.</td>
+            <td>Ставка НДС, %</td>
+            <td>Сумма НДС, руб.</td>
+            <td>Всего с НДС, руб.</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>${name}</td>
+            <td>${count}</td>
+            <td>${totalPrice - (totalPrice * nds)}</td>
+            <td>${totalPrice - (totalPrice * nds)}</td>
+            <td>${nds * 100}</td>
+            <td>${totalPrice * nds}</td>
+            <td>${totalPrice}</td>
         </tr>
         <tr>
             <td>Итого</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>${count}</td>
+            <td>${totalPrice - (totalPrice * nds)}</td>
+            <td>${totalPrice - (totalPrice * nds)}</td>
+            <td>${nds * 100}</td>
+            <td>${totalPrice * nds}</td>
             <td>${totalPrice}</td>
         </tr>
     </table>
-    <p>Сумма НДС:</p>
+    <p>Сумма НДС: ${totalPrice * nds} рублей</p>
     <p>Всего сумма с НДС: ${totalPrice} рублей</p>
-    <p>Счет действителен в течение _____ банковских дней</p>
-    <p>Счет выписал ________________</p>
+    <p>Счет действителен в течение <strong>трех</strong> банковских дней</p>
+    <p>Счет выписал ${userName}</p>
 </section>
