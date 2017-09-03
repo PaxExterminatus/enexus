@@ -1,8 +1,5 @@
 package base.web
 
-import app.CONTENT_CHARSET
-import freemarker.template.Configuration
-import java.io.File
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -12,6 +9,7 @@ open class BaseServlet(controller: BaseController): HttpServlet() {
     private var action: String = ""
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
+        controller.unitAction = action
         res.writer.println(controller.unitRouter(action).content);
     }
 
@@ -25,9 +23,7 @@ open class BaseServlet(controller: BaseController): HttpServlet() {
 
     private fun actionName(url: String): String {
         val pattern = "(?:${controller.unitName})/(\\w+)"
-        var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: "${controller.unitName}"
-        return "action${_action.capitalize()}"
+        var _action = Regex(pattern).find(url)?.groupValues?.get(1) ?: controller.unitName
+        return _action
     }
-
-
 }

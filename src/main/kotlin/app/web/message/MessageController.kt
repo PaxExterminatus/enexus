@@ -12,9 +12,8 @@ class MessageController: BaseController() {
 
     fun actionPreview() {
         pageContent.title = "Предпросмотр соощений"
-        pageContent.add("<h1>${pageContent.title}</h1>")
         var model = MessageModel()
         var data = model.billCoursePreview()
-        render("bill_course.ftlh", data)
+        render("bill_course", data)
     }
 }

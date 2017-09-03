@@ -1,5 +1,6 @@
+<#ftl auto_esc=false>
 <div class="preview">
     <div class="content">
-    <#--main context-->
+        ${body.value}
     </div>
 </div>

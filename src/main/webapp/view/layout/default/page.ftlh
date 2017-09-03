@@ -1,7 +1,8 @@
 <!doctype html>
 <head>
     <title>${title}</title>
-    <link rel="stylesheet" href="source/style.css">
+    <base href="/enexus/">
+    <link rel="stylesheet" href="source/design/style.css">
     <meta charset="${charset}">
 </head>
 
@@ -9,11 +10,15 @@
     <header>
         <h1>${title}</h1>
         <div class="actions">
-            <#--action menu-->
+        <#if viewActions != "">
+            <#include "${viewActions}">
+        </#if>
         </div>
     </header>
     <section class="main">
-        <#--main context-->
+        <#if viewMain != "">
+            <#include "${viewMain}">
+        </#if>
     </section>
     <footer>
         footer
