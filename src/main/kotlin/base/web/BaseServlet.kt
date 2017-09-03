@@ -1,13 +1,15 @@
 package base.web
 
-import base.web.context.PageContent
+import app.CONTENT_CHARSET
+import freemarker.template.Configuration
+import java.io.File
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 open class BaseServlet(controller: BaseController): HttpServlet() {
-    protected var controller: BaseController = controller
-    protected var action: String = ""
+    private var controller: BaseController = controller
+    private var action: String = ""
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
         res.writer.println(controller.unitRouter(action).content);

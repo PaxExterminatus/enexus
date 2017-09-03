@@ -15,6 +15,6 @@ class MessageController: BaseController() {
         pageContent.add("<h1>${pageContent.title}</h1>")
         var model = MessageModel()
         var data = model.billCoursePreview()
-        render("email_bill_course.ftlh", data)
+        render("bill_course.ftlh", data)
     }
 }

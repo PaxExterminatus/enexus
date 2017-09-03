@@ -30,6 +30,7 @@ open class BaseController {
         var vConfig = Configuration(Configuration.VERSION_2_3_25)
         vConfig.setDirectoryForTemplateLoading(File(viewPath))
         vConfig.defaultEncoding = CONTENT_CHARSET
+
         var out = StringWriter()
         vConfig.getTemplate(viewName).process(viewData, out)
         pageContent.add(out.toString())

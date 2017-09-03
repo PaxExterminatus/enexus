@@ -29,7 +29,7 @@
             <td>Всего с НДС, руб.</td>
         </tr>
         <tr>
-            <td>${name}</td>
+            <td>${courseName}</td>
             <td>${count}</td>
             <td>${totalPrice - (totalPrice * nds)}</td>
             <td>${totalPrice - (totalPrice * nds)}</td>
