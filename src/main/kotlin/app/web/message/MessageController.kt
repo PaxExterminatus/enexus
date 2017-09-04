@@ -2,6 +2,7 @@ package app.web.message
 
 import base.web.BaseController
 import base.web.context.PageContent
+import gear.EmailSender
 
 
 class MessageController: BaseController() {
@@ -22,5 +23,6 @@ class MessageController: BaseController() {
         var model = MessageModel()
         var data = model.billCoursePreview()
         viewAddContext ("bill_course", data)
+        EmailSender().send(pageContent.body.value,"paxexterminatus@gmail.com",pageContent.title)
     }
 }
