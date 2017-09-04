@@ -1,6 +1,7 @@
 package app.web.message
 
 import base.web.BaseController
+import base.web.context.PageContent
 
 
 class MessageController: BaseController() {
@@ -14,6 +15,7 @@ class MessageController: BaseController() {
         pageContent.title = "Предпросмотр соощений"
         var model = MessageModel()
         var data = model.billCoursePreview()
-        render("bill_course", data)
+        viewAddContext ("bill_course", data)
+        viewRender()
     }
 }

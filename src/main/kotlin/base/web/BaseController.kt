@@ -11,8 +11,21 @@ open class BaseController {
     var unitAction: String = ""
     var pageContent = PageContent()
 
+    var out = StringWriter()
+
+    private var viewPathContext: String  = ""
+    private var viewPathAction: String = ""
+    var viewConfig = Configuration(Configuration.VERSION_2_3_26)
+    init {
+        viewConfig.defaultEncoding = CONTENT_CHARSET
+        viewConfig.setDirectoryForTemplateLoading(File(PATH_VIEW))
+    }
+
     fun unitRouter(action: String): PageContent {
-        pageContent = PageContent()
+        unitAction = action
+        viewPathContext  = "/$unitName/context/"
+        viewPathAction = "/$unitName/$unitAction/"
+
         try {
             val cl = this.javaClass.getMethod("action${action.capitalize()}").invoke(this)
         } catch (ex: NoSuchMethodException){
@@ -26,34 +39,23 @@ open class BaseController {
         pageContent.add("<h1>Function not found for action $action</h1>")
     }
 
-    fun render(viewName: String, viewData: Any) {
-
-        var vConfig = Configuration(Configuration.VERSION_2_3_26)
-        vConfig.defaultEncoding = CONTENT_CHARSET
-        vConfig.setDirectoryForTemplateLoading(File(PATH_VIEW))
-        var out = StringWriter()
-
-        var file = File("$PATH_VIEW/$unitName/$unitAction/action.ftlh")
-        pageContent.viewActions = if (file.exists()) "/$unitName/$unitAction/action.ftlh" else ""
-
-        file = File("$PATH_VIEW/$unitName/$unitAction/context.ftlh")
-        pageContent.viewMain = if (file.exists()) "/$unitName/$unitAction/context.ftlh" else ""
-
-        vConfig.getTemplate("/$unitName/context/$viewName.ftlh").process(viewData, out)
+    fun viewAddContext(viewName: String, viewData: Any){
+        viewConfig.getTemplate("$viewPathContext/$viewName.ftlh").process(viewData, out)
         pageContent.add(out.toString())
         out = StringWriter()
-
-        if (pageContent.layoutUse) {
-            vConfig.getTemplate("/layout/default/page.ftlh").process(pageContent, out)
-            pageContent.content = out.toString()
-        }
-
-
-//        vConfig.setDirectoryForTemplateLoading(File(viewPath))
-
-
-        //vConfig.getTemplate(viewName).process(viewData, out)
-       // pageContent.add(out.toString())
     }
 
+    fun viewRender() {
+        var file = File("$PATH_VIEW/$unitName/$unitAction/action.ftlh")
+        pageContent.viewActions = if (file.exists()) "$viewPathAction/action.ftlh" else ""
+
+        file = File("$PATH_VIEW/$unitName/$unitAction/context.ftlh")
+        pageContent.viewMain = if (file.exists()) "$viewPathAction/context.ftlh" else ""
+
+        if (pageContent.layoutUse) {
+            viewConfig.getTemplate("/layout/default/page.ftlh").process(pageContent, out)
+            pageContent.content = out.toString()
+        }
+        out = StringWriter()
+    }
 }
