@@ -16,6 +16,11 @@ class MessageController: BaseController() {
         var model = MessageModel()
         var data = model.billCoursePreview()
         viewAddContext ("bill_course", data)
-        viewRender()
+    }
+    fun actionSend() {
+        pageContent.title = "Отправка соощений"
+        var model = MessageModel()
+        var data = model.billCoursePreview()
+        viewAddContext ("bill_course", data)
     }
 }

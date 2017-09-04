@@ -25,6 +25,7 @@
           <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4-3" />
           <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.4-3" />
           <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.mail/javax.mail-api/1.6.0/1941270d3b04ded5bdc274351450b4afe47be080/javax.mail-api-1.6.0.jar" />
         </element>
       </element>
     </root>

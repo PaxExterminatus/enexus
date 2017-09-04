@@ -31,6 +31,7 @@ open class BaseController {
         } catch (ex: NoSuchMethodException){
             unitActionException(action)
         }
+        viewRender()
         return pageContent
     }
 
@@ -45,7 +46,7 @@ open class BaseController {
         out = StringWriter()
     }
 
-    fun viewRender() {
+    private fun viewRender() {
         var file = File("$PATH_VIEW/$unitName/$unitAction/action.ftlh")
         pageContent.viewActions = if (file.exists()) "$viewPathAction/action.ftlh" else ""
 
