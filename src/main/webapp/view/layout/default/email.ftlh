@@ -1477,7 +1477,7 @@
                             <table>
                                 <tr>
                                     <th>
-                                        <h1 class="text-center">Your Receipt</h1>
+                                        <h1 class="text-center">Ваш Заказ</h1>
                                         <center data-parsed="">
                                             <img src="https://www.sendwithus.com/assets/img/zurb-template-images/cat-placeholder.png" valign="bottom" alt="Masthead Image" align="center" class="text-center">
                                         </center>
@@ -1569,7 +1569,7 @@
                                 <table>
                                     <tr>
                                         <th>
-                                            Widget 1
+                                            {{order}}
                                         </th>
                                     </tr>
                                 </table>
@@ -1578,7 +1578,7 @@
                                 <table>
                                     <tr>
                                         <th>
-                                            $2.99
+                                            {{price}}
                                         </th>
                                     </tr>
                                 </table>
@@ -1587,7 +1587,7 @@
                                 <table>
                                     <tr>
                                         <th>
-                                            1
+                                            {{count}}
                                         </th>
                                     </tr>
                                 </table>
@@ -1596,7 +1596,7 @@
                                 <table>
                                     <tr>
                                         <th>
-                                            $0.00
+                                            {{nds}}
                                         </th>
                                     </tr>
                                 </table>
@@ -1605,7 +1605,7 @@
                                 <table>
                                     <tr>
                                         <th>
-                                            $2.99
+                                            {{total}}
                                         </th>
                                     </tr>
                                 </table>
@@ -1673,7 +1673,7 @@
                                     <table>
                                         <tr>
                                             <th>
-                                                Total
+                                                Всего
                                             </th>
                                         </tr>
                                     </table>
@@ -1682,7 +1682,7 @@
                                     <table>
                                         <tr>
                                             <th>
-                                                <b>$8.98</b>
+                                                <b>{{total}}</b>
                                             </th>
                                         </tr>
                                     </table>
@@ -1696,7 +1696,11 @@
                                             <th>
                                                 <center data-parsed="">
                                                     <br align="center" class="text-center"><br align="center" class="text-center">
-                                                    <table class="button text-center"><tr><td><table><tr><td><a href="#">View Full Details </a></td></tr></table></td></tr></table>
+                                                    <table class="button"><tr><td><table><tr><td><a href="#">Как оплатить через ЕРИП?</a></td></tr></table></td></tr></table>
+                                                </center>
+                                                <center data-parsed="">
+                                                    <br align="center" class="text-center"><br align="center" class="text-center">
+                                                    <table class="button"><tr><td><table><tr><td><a href="#">Еще что неть</a></td></tr></table></td></tr></table>
                                                 </center>
                                             </th>
                                             <th class="expander"></th>
@@ -1724,7 +1728,7 @@
                             <table>
                                 <tr>
                                     <th>
-                                        <p class="text-center footercopy">&#xA9; Copyright 2016 Sendwithus. All Rights Reserved.</p>
+                                        <p class="text-center footercopy">&#xA9; Иностранное унитарное образовательное предприятие «ЕШКО», УНП 101491292, Республика Беларусь, 220118, г. Минск, ул. Шишкина, 32, пом.8,Свидетельство о государственной регистрации юридического лица выдано Минским горисполкомом 23 июня 2014 г. № 101491292, Свидетельство о государственной регистрации издателя, изготовителя, распространителя печатных изданий выдано Министерством информации Республики Беларусь 11 августа 2014 г. за № 1/798 о регистрации в качестве издателя;  11 апреля 2016 г. за № 3/1249 о регистрации в качестве распространителя.</p>
                                     </th>
                                     <th class="expander"></th>
                                 </tr>
