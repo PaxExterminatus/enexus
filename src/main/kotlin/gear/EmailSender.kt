@@ -1,33 +1,34 @@
 package gear
 
-import app.*
+import base.web.context.EmailContent
 import java.util.*
 
 import javax.mail.*
 import javax.mail.internet.*
 
 class EmailSender() {
-    var properties: Properties = Properties()
-    var smtpAuth: Authenticator = SMTPAuthenticator()
-    var session: Session = Session.getInstance(properties,smtpAuth)
-    var message: MimeMessage = MimeMessage(session)
-    init {
-        properties.put("mail.smtp.host", "host.eshko.by")
+    fun send(email: EmailContent) {
+        var properties: Properties = Properties()
+        properties.put("mail.smtp.host", "smtp.eshko.by")
         properties.put("mail.smtp.port", 25);
         properties.put("mail.smtp.auth", true)
         properties.put("mail.smtp.starttls.enable", false);
-    }
-    fun send(messageContext: String, recipient: String, title: String) {
-        message.contentLanguage = arrayOf(CONTENT_LANG)
-        message.setFrom("hotline@eshko.by")
-        message.setRecipients(Message.RecipientType.TO, recipient)
-        message.sentDate = Date()
-        message.setSubject(title, CONTENT_CHARSET)
-        message.setText(messageContext, CONTENT_CHARSET)
+
+        var smtpAuth: Authenticator = SMTPAuthenticator()
+        var session: Session = Session.getInstance(properties, smtpAuth)
+
+        var message = MimeMessage(session)
+        message.contentLanguage = email.languages
+        message.setFrom(email.sender)
+        message.setRecipients(Message.RecipientType.TO, email.recipient)
+        message.sentDate = email.sendDate
+        message.subject = email.title
+        message.setText(email.content, email.charset, email.mimeSubType)
+
         Transport.send(message)
 
         var store: Store = session.getStore("imap")
-        store.connect("imap.host.by",143,"","")
+        store.connect("imap.eshko.by",143,"vitaliy.voronin@eshko.by","C9Ask2YalzpDzvkTAarAMirA0k54MXw")
         var folder = store.getFolder("sent")
 
         if (!folder.exists()) {
@@ -41,11 +42,7 @@ class EmailSender() {
 
     private class SMTPAuthenticator: Authenticator() {
         override fun getPasswordAuthentication(): PasswordAuthentication {
-            return PasswordAuthentication("","")
-
+            return PasswordAuthentication("vitaliy.voronin@eshko.by","C9Ask2YalzpDzvkTAarAMirA0k54MXw")
         }
     }
-
-
-
 }

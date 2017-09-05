@@ -11,8 +11,6 @@ open class BaseController {
     var unitAction: String = ""
     var pageContent = PageContent()
 
-    var out = StringWriter()
-
     private var viewPathContext: String  = ""
     private var viewPathAction: String = ""
     var viewConfig = Configuration(Configuration.VERSION_2_3_26)
@@ -40,13 +38,14 @@ open class BaseController {
         pageContent.add("<h1>Function not found for action $action</h1>")
     }
 
-    fun viewAddContext(viewName: String, viewData: Any){
+    fun viewBuild(viewName: String, viewData: Any): String {
+        var out = StringWriter()
         viewConfig.getTemplate("$viewPathContext/$viewName.ftlh").process(viewData, out)
-        pageContent.add(out.toString())
-        out = StringWriter()
+        return out.toString()
     }
 
     private fun viewRender() {
+        var out = StringWriter()
         var file = File("$PATH_VIEW/$unitName/$unitAction/action.ftlh")
         pageContent.viewActions = if (file.exists()) "$viewPathAction/action.ftlh" else ""
 
@@ -57,6 +56,5 @@ open class BaseController {
             viewConfig.getTemplate("/layout/default/page.ftlh").process(pageContent, out)
             pageContent.content = out.toString()
         }
-        out = StringWriter()
     }
 }
