@@ -17,8 +17,5 @@
     <section class="main">
         <#if viewMain != ""><#include "${viewMain}"></#if>
     </section>
-    <footer>
-        footer
-    </footer>
 </body>
 </html>

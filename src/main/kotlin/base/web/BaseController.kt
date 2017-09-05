@@ -40,7 +40,7 @@ open class BaseController {
 
     fun viewBuild(viewName: String, viewData: Any): String {
         var out = StringWriter()
-        viewConfig.getTemplate("$viewPathContext/$viewName.ftlh").process(viewData, out)
+        viewConfig.getTemplate(viewName).process(viewData, out)
         return out.toString()
     }
 

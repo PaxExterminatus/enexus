@@ -1,29 +1,25 @@
 package app.web.message
 
-import app.NDS
 import base.web.BaseModel
 
 class MessageModel: BaseModel() {
 
     fun billCoursePreview(): Any {
-
-
         var data = object {
-            var itemId: Int = 32262
-            var totalPrice: Float = 35f
-            var userName: String = "Воронин Виталий"
-            var nds = NDS
-            var count = 1
-            var courseName = "Английский для нацистов"
-            var billDate = java.util.Date()
+            var clientId: Int = 0
+            var clientName = ""
+            var itemName = ""
+            var totalPrice: Float = 0f
+            var userName: String = ""
         }
-//        var rs = callSas("actionPreview","cause=bill_course&course=1081564&usr=323")
-//        while (rs.next()) {
-//            data.itemId = rs.getInt("ITEM_ID")
-//            data.totalPrice = rs.getFloat("TOTAL_PRICE")
-//            data.userName = rs.getString("USER_NAME")
-//            data.name = rs.getString("PRODUCT_NAME")
-//        }
+        var rs = callSas("actionPreview","cause=bill_course&course=1081564&usr=323")
+        while (rs.next()) {
+            data.clientId = rs.getInt("CLIENT_ID")
+            data.clientName = rs.getString("CLIENT_NAME").capitalize()
+            data.itemName = rs.getString("PRODUCT_NAME")
+            data.totalPrice = rs.getFloat("TOTAL_PRICE")
+            data.userName = rs.getString("USER_NAME")
+        }
         return data
     }
 }
