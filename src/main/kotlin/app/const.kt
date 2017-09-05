@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 val CONTENT_CHARSET = "utf-8"
 val CONTENT_LANG = "ru"
-val PATH_SERVER = Paths.get(".").toAbsolutePath().normalize().toString()
+val PATH_SERVER = Paths.get(".").toAbsolutePath().normalize().toString() //"/opt/tomcat/apache-tomcat-8.5.20"
 val PATH_APP = PATH_SERVER.plus("/webapps/enexus")
 val PATH_LAYOUT = PATH_APP.plus("/layout")
 val PATH_VIEW = PATH_APP.plus("/view")
