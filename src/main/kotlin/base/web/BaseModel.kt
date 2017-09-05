@@ -9,7 +9,7 @@ import java.sql.ResultSet
 open class BaseModel {
     fun callSas(action: String, params: String): ResultSet {
         var db: Connection = DbSeeds.sas.getConnection()
-        var stat: CallableStatement = db.prepareCall("{? = call SYSTEM_NEXUS.funCall(?,?)}")
+        var stat: CallableStatement = db.prepareCall("{? = call SYSTEM_NEXUS.getData(?,?)}")
         stat.registerOutParameter(1,OracleTypes.CURSOR)
         stat.setString(2, action)
         stat.setString(3, params)

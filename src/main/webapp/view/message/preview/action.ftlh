@@ -1,1 +1,2 @@
-<a href="#" class="button email">Отправить</a>
+<#ftl auto_esc=false>
+<a href="message/send?${queryString}" class="button email">Отправить</a>

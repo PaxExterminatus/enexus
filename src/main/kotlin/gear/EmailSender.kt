@@ -19,7 +19,7 @@ class EmailSender() {
 
         var message = MimeMessage(session)
         message.contentLanguage = email.languages
-        message.setFrom(email.sender)
+        message.setFrom(InternetAddress(email.sender," ЕШКО "))
         message.setRecipients(Message.RecipientType.TO, email.recipient)
         message.sentDate = email.sendDate
         message.subject = email.title

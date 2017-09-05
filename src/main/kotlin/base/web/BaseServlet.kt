@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServletResponse
 
 open class BaseServlet(controller: BaseController): HttpServlet() {
     private var controller: BaseController = controller
-    private var action: String = ""
+    private var reqAction: String = ""
 
     protected fun requestProcessing(req: HttpServletRequest) {
-        action = actionName(req.requestURL.toString())
+        reqAction = actionName(req.requestURL.toString())
+        controller.reqQueryString = if (req.queryString != null) req.queryString else ""
     }
 
     protected fun responseProcessing(res: HttpServletResponse) {
@@ -18,7 +19,7 @@ open class BaseServlet(controller: BaseController): HttpServlet() {
     }
 
     override fun service(req: HttpServletRequest, res: HttpServletResponse) {
-        res.writer.println(controller.unitRouter(action).content);
+        res.writer.println(controller.unitRouter(reqAction).content);
         controller.pageContent = PageContent()
     }
 

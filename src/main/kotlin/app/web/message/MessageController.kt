@@ -16,25 +16,25 @@ class MessageController: BaseController() {
     fun actionPreview() {
         pageContent.title = "Предпросмотр соощений"
         var model = MessageModel()
-        var data = model.billCoursePreview()
+        var data = model.billCourse(reqQueryString)
         pageContent.add(viewBuild("/layout/default/email.ftlh", data))
     }
 
     fun actionSend() {
         pageContent.title = "Отправка соощений"
         var model = MessageModel()
-        var data = model.billCoursePreview()
+        var data = model.billCourse(reqQueryString)
         pageContent.add(viewBuild("/layout/default/email.ftlh", data))
 
         var emailContent = EmailContent()
-        emailContent.title = "ЕШКО | Письмо-инструкция"
+        emailContent.title = "Вступительный взнос: письмо-инструкция"
 
         var out = StringWriter()
         if (emailContent.layoutUse) {
             viewConfig.getTemplate("/layout/default/email.ftlh").process(data, out)
             emailContent.content = out.toString()
         }
-        emailContent.recipient = "tatyana.neborskaya@eshko.by"//"paxexterminatus@gmail.com"
+        emailContent.recipient = data["clientEmail"] as String
         EmailSender().send(emailContent)
     }
 }

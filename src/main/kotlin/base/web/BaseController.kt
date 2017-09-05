@@ -9,6 +9,7 @@ import java.io.StringWriter
 open class BaseController {
     val unitName: String = Regex("(^.+)(?:controller)").matchEntire(this.javaClass.simpleName.toLowerCase())!!.groups[1]!!.value
     var unitAction: String = ""
+    var reqQueryString: String = ""
     var pageContent = PageContent()
 
     private var viewPathContext: String  = ""
@@ -47,7 +48,14 @@ open class BaseController {
     private fun viewRender() {
         var out = StringWriter()
         var file = File("$PATH_VIEW/$unitName/$unitAction/action.ftlh")
-        pageContent.viewActions = if (file.exists()) "$viewPathAction/action.ftlh" else ""
+        if (file.exists()) {
+            var data = object {
+                var queryString = reqQueryString
+            }
+            viewConfig.getTemplate("$viewPathAction/action.ftlh").process(data, out)
+            pageContent.viewActions = out.toString()
+            out = StringWriter()
+        }
 
         file = File("$PATH_VIEW/$unitName/$unitAction/context.ftlh")
         pageContent.viewMain = if (file.exists()) "$viewPathAction/context.ftlh" else ""

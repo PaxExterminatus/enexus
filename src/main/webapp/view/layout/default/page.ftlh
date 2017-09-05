@@ -1,3 +1,4 @@
+<#ftl auto_esc=false>
 <!doctype html>
 <head>
     <title>${title}</title>
@@ -11,7 +12,7 @@
     <header>
         <h1>${title}</h1>
         <div class="actions">
-        <#if viewActions != ""><#include "${viewActions}"></#if>
+        ${viewActions}
         </div>
     </header>
     <section class="main">
