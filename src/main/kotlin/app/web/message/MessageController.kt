@@ -27,7 +27,7 @@ class MessageController: BaseController() {
         pageContent.add(viewBuild("/layout/default/email.ftlh", data))
 
         var emailContent = EmailContent()
-        emailContent.title = "Вступительный взнос: письмо-инструкция"
+        emailContent.title = "Регистрационный взнос: письмо-инструкция"
 
         var out = StringWriter()
         if (emailContent.layoutUse) {
