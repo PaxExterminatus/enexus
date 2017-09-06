@@ -2,7 +2,7 @@
 <!doctype html>
 <head>
     <title>${title}</title>
-    <base href="/enexus/">
+    <base href="${base}">
     <link rel="stylesheet" href="source/design/style.css">
     <meta charset="${charset}">
     <meta name="viewport" content="width=device-width" />

@@ -13,5 +13,5 @@ val LAYOUT_CURRENT = "default"
 
 val NDS = 0.2
 val NDS_PRE = 20
-
+val HOST_NAME = "http://dev.office.eshko.net:8282/enexus/"
 val DEFAULT_EMAIL_FROM = "hotline@eshko.by"
