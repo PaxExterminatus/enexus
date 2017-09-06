@@ -126,9 +126,9 @@
                                             <li style="margin-left: 50px; list-style: square outside;">далее "Дополнительное образование и развитие"</li>
                                             <li style="margin-left: 50px; list-style: square outside;">далее "Дистанционное обучение"</li>
                                             <li style="margin-left: 50px; list-style: square outside;">далее «ЕШКО дистанционные курсы»;</li>
-                                            <li style="margin-left: 50px; list-style: square outside;">указать Ваш номер клиента ${clientId}.</li>
+                                            <li style="margin-left: 50px; list-style: square outside;">указать Ваш номер клиента <strong>${clientId?string["0000000"]}</strong>.</li>
                                             <li style="margin-left: 50px; list-style: square outside;">в графе название курса указать  «регистрационный взнос»;</li>
-                                            <li style="margin-left: 50px; list-style: square outside;">указать сумму оплаты ${totalPrice};</li>
+                                            <li style="margin-left: 50px; list-style: square outside;">указать сумму оплаты ${totalPrice} бел. руб.;</li>
                                             <li>проверить информацию и произвести оплату.</li>
                                         </ul>
                                         </p>
