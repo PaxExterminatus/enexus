@@ -5,7 +5,7 @@ import app.*
 class PageContent: HtmlContent() {
 
     var head: Context = Context()
-    var base: String = HOST_NAME
+    var base: String = HTML_BASE
 
     var viewMain = ""
     var viewActions = ""
