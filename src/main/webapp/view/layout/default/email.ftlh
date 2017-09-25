@@ -30,7 +30,7 @@
                 padding: 0 !important;
                 width: 100% !important;
             }
-            table[class=body] .main {
+            table[class=body] .main-context {
                 border-left-width: 0 !important;
                 border-radius: 0 !important;
                 border-right-width: 0 !important;

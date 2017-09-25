@@ -9,14 +9,20 @@
 </head>
 
 <body>
+
     <header>
         <h1>${title}</h1>
         <div class="actions">
         ${viewActions}
         </div>
     </header>
-    <section class="main">
+
+    <section class="main-context">
         <#if viewMain != ""><#include "${viewMain}"></#if>
     </section>
+
+    <footer>
+        footer
+    </footer>
 </body>
 </html>

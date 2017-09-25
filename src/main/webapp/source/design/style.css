@@ -9,18 +9,12 @@ header, footer {
     color: #EAECEE;
 }
 
-header {
-}
-
-footer {
-}
-
-h1 {
+header h1 {
     font-size: 1.25rem;
     border-bottom: 1px solid darkorange;
 }
 
-.main {
+.main-context {
     border: 1px solid rebeccapurple;
 }
 
