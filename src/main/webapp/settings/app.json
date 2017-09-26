@@ -1,0 +1,22 @@
+{
+  "mail": {
+    "login": "vitaliy.voronin@eshko.by",
+    "password": "C9Ask2YalzpDzvkTAarAMirA0k54MXw",
+    "smtp": {
+      "host": "smtp.eshko.by",
+      "port": 25,
+      "auth": true,
+      "starttls": {
+        "enable": false
+      }
+    },
+    "imap": {
+      "host": "imap.eshko.by",
+      "port": 143,
+      "folber": "sent"
+    },
+    "message": {
+      "from": " ЕШКО "
+    }
+  }
+}

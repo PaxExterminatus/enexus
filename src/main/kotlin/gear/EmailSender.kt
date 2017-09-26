@@ -6,7 +6,7 @@ import java.util.*
 import javax.mail.*
 import javax.mail.internet.*
 
-class EmailSender() {
+class EmailSender {
     fun send(email: EmailContent) {
         var properties: Properties = Properties()
         properties.put("mail.smtp.host", "smtp.eshko.by")

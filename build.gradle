@@ -22,6 +22,8 @@ repositories {
 }
 
 dependencies {
+//apache HttpClient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 //Java JsonPath
     compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
 //Web engine
