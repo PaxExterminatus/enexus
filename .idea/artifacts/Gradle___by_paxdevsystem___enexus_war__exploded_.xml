@@ -18,18 +18,23 @@
         </element>
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/lib/ojdbc14.jar" />
-          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
-          <element id="library" level="project" name="Gradle: org.freemarker:freemarker:2.3.26-incubating" />
-          <element id="library" level="project" name="Gradle: javax.mail:javax.mail-api:1.6.0" />
-          <element id="library" level="project" name="Gradle: com.sun.mail:smtp:1.6.0" />
-          <element id="library" level="project" name="Gradle: com.sun.mail:imap:1.6.0" />
-          <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.2" />
-          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
-          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.1.4" />
-          <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jayway.jsonpath/json-path/2.4.0/765a4401ceb2dc8d40553c2075eb80a8fa35c2ae/json-path-2.4.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.26-incubating/713237e013f725b72f4f9ec931a49c14b1805359/freemarker-2.3.26-incubating.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.mail/javax.mail-api/1.6.0/1941270d3b04ded5bdc274351450b4afe47be080/javax.mail-api-1.6.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/smtp/1.6.0/76111e0e67fa5e651c39e7e7a534712b3033c6e8/smtp-1.6.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/imap/1.6.0/861880525d98c65d45956ea62ef5200a0e12f6d1/imap-1.6.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.2/ad1027a3d832bb7f34b4b9afeed760ca8eaa12f/javax.mail-1.5.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1.1/485de3a253e23f645037828c07f1d7f1af40763a/activation-1.1.1.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.1.50/adc62fee3e99a0f5efe8baf529db0c51449b30d1/kotlin-stdlib-jre8-1.1.50.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.1.4/27053164a2b459671c4b9fe791408a5bc064937f/kotlin-reflect-1.1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.3/7396407491352ce4fa30de92efb158adb76b5b/json-smart-2.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.50/782cda128253a8a1843d26b00d86e7c44fbc6246/kotlin-stdlib-jre7-1.1.50.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.50/2bbd56ca7884b4f70db0f1d655d32ee6f205eaa5/kotlin-stdlib-1.1.50.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/1.2/c592b500269bfde36096641b01238a8350f8aa31/accessors-smart-1.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.4/da08b8cce7bbf903602a25a3a163ae252435795/asm-5.0.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
         </element>
       </element>
     </root>
